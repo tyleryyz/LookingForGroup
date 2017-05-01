@@ -1,0 +1,21 @@
+<template name="add_feed_form">
+  {{#if Template.subscriptionsReady}}
+  <br>
+  <div class="container">
+    {{#autoForm collection=cameraHelper id="create_stream" type="insert"}}
+      <p>Enter a display name</p>
+      {{> afQuickField label = ' ' name='displayname'}}
+      <p>What's your favorite game?</p>
+      {{> afQuickField label=' ' name='favoritegame'}}
+      <p>Select platform</p>
+      {{> afQuickField name='categories' label=' ' options=categoryHelper}}
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="submit" class="submitButton btn waves-effect waves-light">Update</button>
+      {{> notifications }}
+    {{/autoForm}}
+  </div>
+  {{/if}}
+</template>

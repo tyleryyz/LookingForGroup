@@ -1,0 +1,25 @@
+<template name="schedule">
+  {{#if Template.subscriptionsReady}}
+  <br>
+  <div class="container">
+    {{#autoForm collection=cameraHelper id="create_stream" type="insert"}}
+      <p>Enter your group's name</p>
+      {{> afQuickField name='groupname' label=' '}}
+			<p>Add a picture!</p>
+      {{> afQuickField name='url' label=' '}}
+      <p>What game will you be playing?</p>
+      {{> afQuickField label=' ' name='game'}}
+      <p>Enter a description</p>
+      {{> afQuickField label='description' label=' ' name='description'}}
+      <p>Select platform</p>
+      {{> afQuickField name='categories' label=' ' options=categoryHelper}}
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="submit" class="submitButton btn waves-effect waves-light">Find Players!</button>
+      {{> notifications }}
+    {{/autoForm}}
+  </div>
+  {{/if}}
+</template>
